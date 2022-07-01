@@ -72,6 +72,7 @@ class UploadForm extends Model
         $fileupload->file_name = $model->post_name;
         $fileupload->file_caption = $this->file_caption;
         $fileupload->file_type = $filetype;
+        dd($filetype);
         if ($this->validate()) {
 
             if($this->file == null){
@@ -79,6 +80,7 @@ class UploadForm extends Model
                 return true;
             } else {
                 $path = "uploads/files/$filetype"."s/";
+                // $path=Yii::$app->basePath.'web/uploads/files/imagess/'.$filetype."s/";
 
                 if (!is_dir($path)) {
                     FileHelper::createDirectory($path);

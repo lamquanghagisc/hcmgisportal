@@ -53,7 +53,7 @@ class GisPosts extends \yii\db\ActiveRecord
             [['post_parent', 'menu_order',], 'default', 'value' => null],
             [['post_author', 'post_parent', 'menu_order', 'comment_count'], 'integer'],
             [['post_date', 'post_date_gmt', 'post_modified', 'post_modified_gmt'], 'safe'],
-            [['post_content', 'post_title', 'post_img', 'to_ping', 'pinged', 'post_content_filtered'], 'string'],
+            [['post_content', 'post_title', 'post_img', 'to_ping', 'pinged', 'post_content_filtered', 'post_img_name'], 'string'],
             [['post_password', 'guid'], 'string', 'max' => 255],
             [['post_name'], 'string', 'max' => 200],
             [['post_type', 'post_status', 'comment_status', 'ping_status'], 'string', 'max' => 20],
@@ -73,7 +73,7 @@ class GisPosts extends \yii\db\ActiveRecord
             'post_date_gmt' => Yii::t('app', 'Post Date Gmt'),
             'post_content' => Yii::t('app', 'Nội dung'),
             'post_title' => Yii::t('app', 'Tiêu đề'),
-            'post_img' => Yii::t('app', 'Ảnh thumbnail'),
+            'post_img' => Yii::t('app', 'Đường dẫn'),
             'post_password' => Yii::t('app', 'Post Password'),
             'post_name' => Yii::t('app', 'Post Name'),
             'to_ping' => Yii::t('app', 'To Ping'),
@@ -90,6 +90,7 @@ class GisPosts extends \yii\db\ActiveRecord
             'post_status' => Yii::t('app', 'Post Status'),
             'comment_status' => Yii::t('app', 'Comment Status'),
             'ping_status' => Yii::t('app', 'Ping Status'),
+            'post_img_name'=> Yii::t('app', 'Tên hình')
         ];
     }
 
